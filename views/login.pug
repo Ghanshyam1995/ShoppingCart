@@ -1,0 +1,27 @@
+html    
+  head
+     title #{title}
+     link(href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css", rel="stylesheet")
+     link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
+     style.
+         .card{
+            margin-top:15%;
+         }
+     
+  body
+    div.columns
+    
+      div.card.column.is-4.is-offset-4
+       form(action="/account/login",method="post")
+         div.card-content
+            div.content
+               div.field
+                 p.control
+                   input(type="text", placeholder="Email", name="email").input.is-dark.is-outlined
+               div.field
+                 p.control
+                   input(type="password", placeholder="Password", name="password").input.is-dark.is-outlined
+                  
+         
+    
+         button(type="submit",align="right").button.is-dark.is-outlined.is-pulled-right Login

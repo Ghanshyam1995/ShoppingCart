@@ -1,0 +1,65 @@
+html    
+  head
+     title #{title}
+     link(href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css", rel="stylesheet")
+     link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
+     style.
+       .fa
+          {
+            font-size:24px;
+          }
+        .content{
+          margin-top:20px;
+        }
+        .card{
+          height:300px!important;
+
+        }
+        .card img{
+           height:200px;
+           width:200px;
+           margin-bottom:10px;
+        }
+        .card:hover{
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+  body
+    nav.nav 
+       div.nav-left
+         a.nav-item
+           img(src="http://bulma.io/images/bulma-logo.png",alt="Bulma Logo")
+
+       span.nav-toggle
+           span
+           span
+           span
+           span
+       div.nav-right.nav-menu
+         a.nav-item(title="Home")
+           i.fa.fa-home
+         a.nav-item(title="Cart") 
+           i.fa.fa-shopping-cart 
+         a.nav-item(title="Checkout") 
+           i.fa.fa-share
+          
+           
+         a.nav-item(href="/account/login")
+           button.button.is-success.is-outlined login
+             i.fa.fa-sign-in
+              
+    block content
+    
+    div.footer 
+      div.container
+        div.content.has-text-centered
+          p
+            strong Shopping Cart : 
+              a(href="https://ghanshyam1995.github.io/angular-covalent") Ghanshyam Singh
+
+          p
+           a(href="https://github.com/ghanshyam1995")
+               i.fa.fa-github
+       
+  
+      
+    

@@ -1,0 +1,16 @@
+extends layout
+  
+block content
+ div.content 
+  h2 Products
+  div.columns
+    
+    for product in products
+     a(href=`/products/${product.ID}`) 
+      div.column.is-11
+        div.card
+           div.card-content
+             img(src=`../images/Products/${product.Image}`).image
+             p #{product.Name}
+                  
+                

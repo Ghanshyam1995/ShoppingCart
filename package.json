@@ -1,0 +1,22 @@
+{
+    "name": "shopping-cart",
+    "version": "0.0.1",
+    "description": "Shopping Cart Application In Node.js(Expres Framework and Pug(Templating Engine)",
+    "main": "app.js",
+    "keywords": [
+        "Shopping Cart",
+        "Node.js ShoppingCart",
+        "Express Shopping cart"
+    ],
+    "scripts": {},
+    "author": "Ghanshyam Singh <ghanshyam3303@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.15.3",
+        "express-session": "^1.15.3",
+        "mssql": "^4.0.4",
+        "pug": "^2.0.0-rc.2"
+    }
+}

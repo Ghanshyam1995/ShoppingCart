@@ -1,0 +1,18 @@
+extends layout
+  
+block content
+ div.content 
+  h2 Categories
+  div.columns
+    
+    for record in records
+     a(href=`/products/${record.ID}`) 
+      div.column.is-11
+        div.card
+           div.card-content
+             img(src=`../images/Category/${record.Image}`).image
+             p #{record.Name}
+                  
+                
+
+                
