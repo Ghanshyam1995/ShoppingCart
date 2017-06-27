@@ -13,26 +13,33 @@ html
            opacity:0.7;
              overflow:hidden;
          }
-         
+        
      
   body
     div.columns
       
       div.card.column.is-4.is-offset-4
-       if(errors)
-         ul
-           for error in errors 
-             li.text-canter #{error.msg}
+       if(error)
+        h3(align="center",style="color:#ff3860") #{error}
        form(action="/account/login",method="post")
          div.card-content
             div.content
                div.field
                  p.control
-                   input(type="text", placeholder="Email", name="email").input.is-light.is-outlined
+                   input(type="text", placeholder="Email", name="email").input
+                   if(errors)
+                     for error in errors
+                         if (error.param=='email')
+                            p.help.is-danger #{error.msg} 
+                            -break
                div.field
                  p.control
-                   input(type="password", placeholder="Password", name="password").input.is-light.is-outlined
-                  
+                   input(type="password", placeholder="Password", name="password").input
+                   if(errors)
+                      for error in errors
+                         if (error.param=='password')
+                            p.help.is-danger #{error.msg}
+                            -break
          
     
-         button(type="submit",align="right").button.is-light.is-pulled-right Login
+         button(type="submit",align="right").button.is-pulled-right Login

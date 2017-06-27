@@ -8,7 +8,9 @@
         "Node.js ShoppingCart",
         "Express Shopping cart"
     ],
-    "scripts": {},
+    "scripts": {
+        "start": "node app.js"
+    },
     "author": "Ghanshyam Singh <ghanshyam3303@gmail.com>",
     "license": "ISC",
     "dependencies": {
@@ -20,5 +22,8 @@
         "express-validator": "^3.2.0",
         "mssql": "^4.0.4",
         "pug": "^2.0.0-rc.2"
+    },
+    "engines": {
+        "node": "6.9.1"
     }
 }

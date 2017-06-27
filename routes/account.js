@@ -7,7 +7,6 @@ router.get("/login", (req, res, next) => {
     res.render('login', { title: "Login" })
 });
 
-
 router.post('/login', (req, res, next) => {
     var email = req.body.email;
     var password = req.body.password;
@@ -15,6 +14,7 @@ router.post('/login', (req, res, next) => {
     req.checkBody('email', 'Email is required').notEmpty();
     req.checkBody('email', 'Email must be valid').isEmail();
     req.checkBody('password', 'Password is required').notEmpty();
+
 
     var errors = req.validationErrors();
     if (errors) {
@@ -26,8 +26,8 @@ router.post('/login', (req, res, next) => {
                 .input("Password", sql.NVarChar, password);
             request.query("SELECT * from Users WHere Email=@Email AND Password=@Password", (err, user) => {
                 if (err) throw err;
-                req.session.user = user.recordset;
-
+                sql.close();
+                res.render('login', { error: 'Email/Password is incorrect' });
             });
 
         })
