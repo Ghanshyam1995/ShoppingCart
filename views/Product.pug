@@ -6,11 +6,11 @@ block content
   div.columns
     
     for product in products
-     a(href=`/products/${product.ID}`) 
+     
       div.column.is-11
         div.card
            div.card-content
              img(src=`../images/Products/${product.Image}`).image
              p #{product.Name}
-                  
-                
+             a(href=`/account/add-to-cart/${product.ID}`, title="Add to cart") 
+              i.fa.fa-shopping-cart         

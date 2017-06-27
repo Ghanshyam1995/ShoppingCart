@@ -6,22 +6,33 @@ html
      style.
          .card{
             margin-top:15%;
+          
          }
+         body{
+           background-color:orange;
+           opacity:0.7;
+             overflow:hidden;
+         }
+         
      
   body
     div.columns
-    
+      
       div.card.column.is-4.is-offset-4
+       if(errors)
+         ul
+           for error in errors 
+             li.text-canter #{error.msg}
        form(action="/account/login",method="post")
          div.card-content
             div.content
                div.field
                  p.control
-                   input(type="text", placeholder="Email", name="email").input.is-dark.is-outlined
+                   input(type="text", placeholder="Email", name="email").input.is-light.is-outlined
                div.field
                  p.control
-                   input(type="password", placeholder="Password", name="password").input.is-dark.is-outlined
+                   input(type="password", placeholder="Password", name="password").input.is-light.is-outlined
                   
          
     
-         button(type="submit",align="right").button.is-dark.is-outlined.is-pulled-right Login
+         button(type="submit",align="right").button.is-light.is-pulled-right Login
