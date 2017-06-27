@@ -18,9 +18,12 @@ html
   body
     div.columns
       
-      div.card.column.is-4.is-offset-4
+     div.card.column.is-4.is-offset-4
        if(error)
-        h3(align="center",style="color:#ff3860") #{error}
+         div.notification.is-danger
+           button.delete
+           p=error
+       
        form(action="/account/login",method="post")
          div.card-content
             div.content

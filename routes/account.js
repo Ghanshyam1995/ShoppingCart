@@ -14,8 +14,6 @@ router.post('/login', (req, res, next) => {
     req.checkBody('email', 'Email is required').notEmpty();
     req.checkBody('email', 'Email must be valid').isEmail();
     req.checkBody('password', 'Password is required').notEmpty();
-
-
     var errors = req.validationErrors();
     if (errors) {
         res.render('login', { errors: errors });
@@ -26,10 +24,10 @@ router.post('/login', (req, res, next) => {
                 .input("Password", sql.NVarChar, password);
             request.query("SELECT * from Users WHere Email=@Email AND Password=@Password", (err, user) => {
                 if (err) throw err;
+                req.flash('error', 'Invalid username/password');
                 sql.close();
-                res.render('login', { error: 'Email/Password is incorrect' });
+                res.render('login');
             });
-
         })
     }
 });

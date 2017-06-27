@@ -1,4 +1,5 @@
 var express = require('express');
+var flash = require('connect-flash');
 var path = require('path');
 var sql = require("mssql");
 var cookieParser = require('cookie-parser');
@@ -22,6 +23,12 @@ app.use(cookieParser());
 app.use(session({ secret: "shopping-cart" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(flash());
+app.use(function(req, res, next) {
+    res.locals.success = req.flash('success');
+    res.locals.errors = req.flash('error');
+    next();
+});
 app.use('/products', product);
 app.use('/account', account);
 app.use('/', (req, res) => {
